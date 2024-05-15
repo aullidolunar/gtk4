@@ -1,0 +1,22 @@
+cmake_minimum_required (VERSION 3.20)
+
+project (gtktest VERSION 1.1.0.1 LANGUAGES C)
+
+set (BIN_NAME "${PROJECT_NAME}-${PROJECT_VERSION}")
+
+find_package (PkgConfig REQUIRED)
+pkg_check_modules (GTK4 REQUIRED gtk4)
+
+add_executable(${BIN_NAME})
+add_subdirectory(src)
+
+target_compile_definitions (${BIN_NAME} PRIVATE PROJECT_ID="${PROJECT_NAME}" PROGRAM_NAME="${PROJECT_NAME} ${PROJECT_VERSION}")
+target_include_directories (${BIN_NAME} PRIVATE ${GTK4_INCLUDE_DIRS})
+target_link_directories (${BIN_NAME} PRIVATE ${GTK4_LIBRARY_DIRS})
+target_link_libraries(${BIN_NAME} PRIVATE ${GTK4_LIBRARIES})
+
+add_custom_target(run
+    COMMAND ${BIN_NAME}
+    DEPENDS ${BIN_NAME}
+    WORKING_DIRECTORY ${CMAKE_PROJECT_DIR}
+)
