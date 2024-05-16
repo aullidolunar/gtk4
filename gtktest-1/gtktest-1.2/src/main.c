@@ -50,14 +50,10 @@ void app_startup (GtkApplication *app, gpointer user_data)
 	item1 = g_menu_item_new ("_Abrir", "app.folder1");
 	item2 = g_menu_item_new ("_Guardar", "app.folder2");
 	submenu12 = g_menu_new ();
-	// https://wiki.gnome.org/HowDoI/ApplicationMenu
 	item3 = g_menu_item_new ("_Cerrar", "app.door");
-	//GFile *f = g_file_new_for_uri ("resource:///gtk4/aullidolunar/gtktest/icons/18x18/actions/door");
-	GFile *f = g_file_new_for_path ("C:\\Users\\MtroJoel\\Documents\\ProfeJoel\\devel\\gtk4\\gtktest-1\\gtktest-1.2\\data\\door_18.png");
-	GIcon *icon = g_file_icon_new (f);
-	g_menu_item_set_icon (item3, icon);
-	g_object_unref (f);
-	g_object_unref (icon);
+	// is expected not to show menu icons in gtk 4.15.1 and Gio 2.81.0, but
+	// works in gtk3
+	g_menu_item_set_attribute (item3, G_MENU_ATTRIBUTE_ICON, "s", "door", NULL);
 	
 	g_menu_append_item (submenu11, item1);
 	g_menu_append_item (submenu11, item2);
