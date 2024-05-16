@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+	<!-- Same as gapplication_id in tk_application_new -->
+	<gresource prefix="/gtk4/aullidolunar/gtktest">
+		<!-- use this structure is a must for you icons -->
+		<file alias="icons/48x48/apps/gtktest.png">main_48.png</file>
+		<file alias="icons/64x64/apps/gtktest.png">main_64.png</file>
+		<file alias="icons/18x18/actions/door">door_18.png</file>
+	</gresource>
+</gresources>
