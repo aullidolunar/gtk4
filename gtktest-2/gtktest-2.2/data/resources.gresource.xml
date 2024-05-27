@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/gtk4/aullidolunar/gtktest">
+    <file alias="/icons/48x48/apps/gtktest.png">main.png</file>
+    <file alias="action_ui.png">menu.png</file>
+  </gresource>
+</gresources>
