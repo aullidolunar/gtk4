@@ -10,4 +10,7 @@ CellItem * cell_item_new (const char*, const char*, int);
 const char* cell_item_get_name (CellItem*);
 const char* cell_item_get_carrera (CellItem*);
 int cell_item_get_grade (CellItem*);
+void cell_item_set_grade (CellItem*, int );
+void cell_item_set_name (CellItem* ci, const char*);
+void cell_item_set_carrera (CellItem*, const char*);
 #endif

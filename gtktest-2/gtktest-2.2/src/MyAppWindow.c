@@ -3,7 +3,6 @@
 struct _MyAppWindow
 {
 	GtkApplicationWindow parent;
-	AppData *udata;
 };
 
 G_DEFINE_TYPE (MyAppWindow, my_app_window, GTK_TYPE_APPLICATION_WINDOW);

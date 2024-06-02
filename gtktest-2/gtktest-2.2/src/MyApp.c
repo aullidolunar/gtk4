@@ -6,12 +6,18 @@
 struct _MyApp
 {
 	GtkApplication parent;
+	AppData *data;
 };
 
 G_DEFINE_TYPE (MyApp, my_app, GTK_TYPE_APPLICATION);
 
-void my_app_init (MyApp *)
+void my_app_init (MyApp *app)
 {
+}
+
+AppData* my_app_get_data (GApplication *app)
+{
+	return MY_APP (app)->data;
 }
 
 void my_app_activate (GApplication *app)
@@ -23,6 +29,8 @@ void my_app_activate (GApplication *app)
 	GtkWidget *scrolled_win;
 	GtkWidget *view;
 	GMenu *menu_model;
+	GMenu *menu_sec1;
+	GMenu *menu_sec2;
 	GListStore *list_model;
 	GtkColumnViewColumn* column;
 	GtkListItemFactory *factory;
@@ -39,13 +47,16 @@ void my_app_activate (GApplication *app)
 // action entries:
 	const GActionEntry entries[] =
     {
-        {"carga", cb_open, NULL, NULL, NULL, { 0, 0, 0 }},
+        {"muestra1", cb_showme1, NULL, NULL, NULL, { 0, 0, 0 }},
+        {"muestra2", cb_showme2, NULL, NULL, NULL, { 0, 0, 0 }},
         {"salida", cb_quit, NULL, NULL, NULL, { 0, 0, 0 }}
     };
     g_action_map_add_action_entries (G_ACTION_MAP (app), entries, G_N_ELEMENTS (entries), app);
-    const gchar *carga[] = {"<ctrl>c", NULL};
+    const gchar *carga1[] = {"<ctrl>b", NULL};
+    const gchar *carga2[] = {"<ctrl>d", NULL};
     const gchar *salida[] = {"<ctrl>s", "<ctrl>w", "<ctrl>q", NULL};
-    gtk_application_set_accels_for_action (GTK_APPLICATION (app), "app.carga", carga);
+    gtk_application_set_accels_for_action (GTK_APPLICATION (app), "app.muestra1", carga1);
+    gtk_application_set_accels_for_action (GTK_APPLICATION (app), "app.muestra2", carga2);
 	gtk_application_set_accels_for_action (GTK_APPLICATION (app), "app.salida", salida);
 
 // create child container:
@@ -53,8 +64,13 @@ void my_app_activate (GApplication *app)
 
 // UI:
 	menu_model = g_menu_new ();
-	g_menu_append (menu_model, "_Cargar", "app.carga");
-	g_menu_append (menu_model, "_Salir", "app.salida");
+	menu_sec1 = g_menu_new ();
+	menu_sec2 = g_menu_new ();
+	g_menu_append (menu_sec1, "_Mostrar 1", "app.muestra1");
+	g_menu_append (menu_sec1, "_Mostrar 2", "app.muestra2");
+	g_menu_append_section (menu_model, NULL, G_MENU_MODEL (menu_sec1));
+	g_menu_append (menu_sec2, "_Salir", "app.salida");
+	g_menu_append_section (menu_model, NULL, G_MENU_MODEL (menu_sec2));
 	
 	button = gtk_menu_button_new ();
 	gtk_widget_set_hexpand (button, FALSE);
@@ -69,9 +85,10 @@ void my_app_activate (GApplication *app)
 	
 	list_model = g_list_store_new (G_TYPE_OBJECT);
 	selection = gtk_single_selection_new (G_LIST_MODEL (list_model));
-	view = gtk_column_view_new (GTK_SELECTION_MODEL (selection));
-	gtk_widget_set_hexpand (view, TRUE);
-	gtk_widget_set_vexpand (view, TRUE);
+	MY_APP (app)->data->view = gtk_column_view_new (GTK_SELECTION_MODEL (selection));
+	//gtk_column_view_set_single_click_activate (GTK_COLUMN_VIEW (view), FALSE);
+	gtk_widget_set_hexpand (MY_APP (app)->data->view, TRUE);
+	gtk_widget_set_vexpand (MY_APP (app)->data->view, TRUE);
 	const char *column_names[] = { "Nombre", "Carrera", "Grado", NULL };
 	for (int i = 0; column_names[i]; i++)
 	{
@@ -79,7 +96,7 @@ void my_app_activate (GApplication *app)
 		g_signal_connect (factory, "setup", G_CALLBACK (factory_setup), GINT_TO_POINTER (i));
 		g_signal_connect (factory, "bind", G_CALLBACK (factory_bind), GINT_TO_POINTER (i));
 		column = gtk_column_view_column_new (column_names[i], factory);
-		gtk_column_view_append_column (GTK_COLUMN_VIEW (view), column);
+		gtk_column_view_append_column (GTK_COLUMN_VIEW (MY_APP (app)->data->view), column);
 	}
 // testing the model:
 	g_list_store_append (list_model, cell_item_new ("Joel", "Ciencias de la Comunicación", 10));
@@ -87,7 +104,7 @@ void my_app_activate (GApplication *app)
 	g_list_store_append (list_model, cell_item_new ("Bar", "Derecho", 25));
 	g_list_store_append (list_model, cell_item_new ("Buz", "Diseño de Modas", -5));
 	
-	gtk_scrolled_window_set_child (GTK_SCROLLED_WINDOW (scrolled_win), view);
+	gtk_scrolled_window_set_child (GTK_SCROLLED_WINDOW (scrolled_win), MY_APP (app)->data->view);
 
 // layout:
 	gtk_grid_attach (GTK_GRID (child), button, 0, 0, 1, 1);
@@ -97,11 +114,14 @@ void my_app_activate (GApplication *app)
 
 // show window:
 	gtk_window_present (GTK_WINDOW (win));
-	//udata->index = 0;
+	//int pos = MY_APP (app)->data->pos;
+	//g_print ("POS: %d\n", pos);
 
 // clean up:
 	//g_object_unref (selection);
 	//g_object_unref (list_model);
+	g_object_unref (menu_sec2);
+	g_object_unref (menu_sec1);
 	g_object_unref (menu_model);
 	g_object_unref (theme);
 }
@@ -111,7 +131,9 @@ void my_app_class_init (MyAppClass *class)
 	G_APPLICATION_CLASS (class)->activate = my_app_activate;
 }
 
-MyApp *my_app_new (void)
+MyApp *my_app_new (AppData *pad)
 {
-	return g_object_new (MY_APP_TYPE, "application-id", PROJECT_APPID, "flags", G_APPLICATION_DEFAULT_FLAGS, NULL);
+	MyApp *obj = g_object_new (MY_APP_TYPE, "application-id", PROJECT_APPID, "flags", G_APPLICATION_DEFAULT_FLAGS, NULL);
+	obj->data = pad;
+	return obj;
 }
