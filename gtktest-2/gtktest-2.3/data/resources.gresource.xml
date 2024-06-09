@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/gtk4/aullidolunar/gtktest">
+    <file alias="/icons/48x48/apps/gtktest.png">main_48.png</file>
+    <file alias="/icons/48x48/apps/any-user-info.png">user_48.png</file>
+    <file alias="action_ui.png">menu_32.png</file>
+    <file alias="ok-icon.png">ok_24.png</file>
+    <file alias="cancel-icon.png">cancel_24.png</file>
+    <file alias="user-card">user-card_64.png</file>
+  </gresource>
+</gresources>
