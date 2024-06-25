@@ -9,3 +9,5 @@
 08/06/2024 gtktest-2.3: A GtkColumnView for testing to get data, based on selected index or selected row, to show it in a custom dialog. Also a custom dialog to input data and store it in the GtkColumnView's model.
 
 19/06/2024 gtktest-2.4: A GtkColumnView for testing to get data, based on selected index or selected row, to show it in a custom dialog. Also a custom dialog to input data and store it in the GtkColumnView's model, a dialog to edit selected itemos and editable item to modify labels in the GtkColumnView. Some changes like include a drop down (combobox) to display strings.
+
+25/06/2024 gtktest-2.5: A GtkColumnView for testing to get data, based on selected index or selected row, to show it in a custom dialog. Also a custom dialog to input data and store it in the GtkColumnView's model, a dialog to edit selected itemos and editable item to modify labels in the GtkColumnView. Some changes like include a drop down (combobox) to display strings. Now menu items are disabled when GtkColumnView doesn't have rows.
