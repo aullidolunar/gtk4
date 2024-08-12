@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Windows stuff only -->
+<gresources>
+	<gresource>
+		<file alias="platform">windows-icon-96.png</file>
+	</gresource>
+</gresources>

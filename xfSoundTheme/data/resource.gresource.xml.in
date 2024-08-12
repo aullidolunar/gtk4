@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generic stuff -->
+<gresources>
+	<!-- Same as gapplication_id in gtk_application_new -->
+	<gresource prefix="/gtk4/aullidolunar/@PROGRAM_NAME@">
+		<file alias="main.png">app.png</file>
+	</gresource>
+</gresources>
