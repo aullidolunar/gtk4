@@ -1,0 +1,42 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR aullidolunar
+# This file is distributed under the same license as the xfSoundThemei18n package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: xfSoundThemei18n 1.0.0.3\n"
+"Report-Msgid-Bugs-To: aullidolunar@gmail.com\n"
+"POT-Creation-Date: 2024-08-13 09:40-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../src/callbacks.c:55
+msgid "Sound theme list:"
+msgstr ""
+
+#: ../src/callbacks.c:72
+msgid "Choose one"
+msgstr ""
+
+#: ../src/callbacks.c:74
+msgid "generared an error"
+msgstr ""
+
+#: ../src/callbacks.c:101
+msgid "_Apply"
+msgstr ""
+
+#: ../src/callbacks.c:104
+msgid "Your platform icon"
+msgstr ""
+
+#: data/xfSoundThemei18n.desktop.in:5
+msgid "Program compile with Gtk4 4.14.4"
+msgstr ""

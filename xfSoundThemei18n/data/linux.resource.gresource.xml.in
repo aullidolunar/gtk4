@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Linux stuff only -->
+<gresources>
+	<gresource prefix="/gtk4/aullidolunar/@PROGRAM_NAME@">
+		<file alias="/icons/48x48/apps/@PROGRAM_NAME@.png">linux-icon-48.png</file>
+	</gresource>
+	<gresource>
+		<file alias="platform">linux-icon-96.png</file>
+	</gresource>
+</gresources>

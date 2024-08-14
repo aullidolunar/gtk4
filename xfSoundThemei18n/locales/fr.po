@@ -1,0 +1,42 @@
+# French translations for xfSoundThemei18n package.
+# Copyright (C) 2024 aullidolunar
+# This file is distributed under the same license as the xfSoundThemei18n package.
+# Automatically generated, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: xfSoundThemei18n 1.0.0.1\n"
+"Report-Msgid-Bugs-To: aullidolunar@gmail.com\n"
+"POT-Creation-Date: 2024-08-13 09:35-0700\n"
+"PO-Revision-Date: 2024-08-12 20:38-0700\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../src/callbacks.c:55
+msgid "Sound theme list:"
+msgstr ""
+
+#: ../src/callbacks.c:72
+msgid "Choose one"
+msgstr ""
+
+#: ../src/callbacks.c:74
+msgid "generared an error"
+msgstr ""
+
+#: ../src/callbacks.c:101
+msgid "_Apply"
+msgstr ""
+
+#: ../src/callbacks.c:104
+msgid "Your platform icon"
+msgstr ""
+
+#: data/xfSoundThemei18n.desktop.in:5
+msgid "Program compile with Gtk4 4.14.4"
+msgstr ""
