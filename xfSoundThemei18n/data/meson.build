@@ -1,22 +1,25 @@
 # data
 
+desktop_file = files('desktop.in')
+XGETTEXT_EXECUTABLE = find_program('xgettext')
+gcr_executable = find_program('glib-compile-resources')
+
 conf_data = configuration_data()
-conf_data.set('PROGRAM_NAME', meson.project_name())
-conf_data.set('PROGRAM_ICON', meson.project_name() + '.png')
+conf_data.set('PROGRAM_NAME', PROGRAM_NAME)
+conf_data.set('PROGRAM_ICON', PROGRAM_NAME + '.png')
 conf_data.set('PROGRAM_DESC', PROGRAM_DESC)
 
-xgettext_path = find_program('xgettext')
+POT_FILE = meson.current_source_dir() /  PROGRAM_NAME + '.pot'
+POT_FILES = []
 
-pot_files = []
-
-pot_files += custom_target(
+POT_FILES += custom_target(
 	'create-sources-pot',
 	output: 'sources.pot',
-	command :  [
-		xgettext_path,
+	command:  [
+		XGETTEXT_EXECUTABLE,
 		'--from-code=UTF-8',
-		'--package-name=' + meson.project_name() + '',
-		'--package-version=' + meson.project_version() + '',
+		'--package-name=' + PROGRAM_NAME + '',
+		'--package-version=' + PROGRAM_VERSION + '',
 		'--msgid-bugs-address=aullidolunar@gmail.com',
 		'--copyright-holder=aullidolunar',
 		'-k',
@@ -25,71 +28,49 @@ pot_files += custom_target(
 		'-c',
 		'-o',
 		'@OUTPUT@',
-		SOURCES_I18N
+		I18N_SOURCES
 	]
 )
 
-if fs.is_file('desktop.in')
+DESKTOP_IN = configure_file(
+	input: desktop_file,
+	output: PROGRAM_NAME + '.desktop.in',
+	configuration: conf_data
+)
 
-	desktop_in = configure_file(
-		input : 'desktop.in',
-		output : meson.project_name() + '.desktop.in',
-		configuration : conf_data
-	)
-
-	pot_files += custom_target(
-		'create-desktop-pot',
-		input: desktop_in,
-		output: 'desktop.pot',
-		command :  [
-			xgettext_path,
-			'--from-code=UTF-8',
-			'--package-name=' + meson.project_name() + '',
-			'--package-version=' + meson.project_version() + '',
-			'--msgid-bugs-address=aullidolunar@gmail.com',
-			'--copyright-holder=aullidolunar',
-			'-k',
-			'-kComment',
-			'--language=Desktop',
-			'-c',
-			'-o',
-			'@OUTPUT@',
-			'@INPUT@'
-		]
-	)
-endif
-
-pot_file = custom_target(
-	'create-pot',
-	input: pot_files,
-	output: meson.project_name() + '.pot',
-	depends: pot_files,
-	command :  [
-		xgettext_path,
+POT_FILES += custom_target(
+	'create-desktop-pot',
+	input: DESKTOP_IN,
+	output: 'desktop.pot',
+	command:  [
+		XGETTEXT_EXECUTABLE,
 		'--from-code=UTF-8',
-		'--package-name=' + meson.project_name() + '',
-		'--package-version=' + meson.project_version() + '',
+		'--package-name=' + PROGRAM_NAME + '',
+		'--package-version=' + PROGRAM_VERSION + '',
 		'--msgid-bugs-address=aullidolunar@gmail.com',
 		'--copyright-holder=aullidolunar',
+		'-k',
+		'-kComment',
+		'--language=Desktop',
 		'-c',
 		'-o',
-		'../@OUTPUT@',
+		'@OUTPUT@',
 		'@INPUT@'
 	]
 )
-gcr_path = find_program('glib-compile-resources')
 
 gresource_xml = configure_file(
-	input : 'resource.gresource.xml.in',
-	output : 'resource.gresource.xml',
-	configuration : conf_data
+	input: 'resource.gresource.xml.in',
+	output: 'resource.gresource.xml',
+	configuration: conf_data
 )
 
-gresource_c = custom_target('gresource_c',
-	output : 'gresource.c',
-	input : gresource_xml,
+PROGRAM_SOURCES += custom_target(
+	'gresource_c',
+	output: 'gresource.c',
+	input: gresource_xml,
 	command : [
-		gcr_path,
+		gcr_executable,
 		'--sourcedir=../data/',
 		'--target=@OUTPUT@',
 		'--generate-source',
@@ -97,26 +78,64 @@ gresource_c = custom_target('gresource_c',
 	]
 )
 
-PROGRAM_SOURCES += gresource_c
-
 if build_machine.system() == 'windows'
 
-	windres_path = find_program('windres')
+	windows = import('windows')
 
 	rc_data = configuration_data()
-	rc_data.set('PROGRAM_NAME', meson.project_name())
-	rc_data.set('PROGRAM_VERSION', meson.project_version())
-	rc_data.set('PROGRAM_VERSION_COMMA', meson.project_version().replace('.', ','))
+	rc_data.set('PROGRAM_NAME', PROGRAM_NAME)
+	rc_data.set('PROGRAM_VERSION', PROGRAM_VERSION)
+	rc_data.set('PROGRAM_VERSION_COMMA', PROGRAM_VERSION.replace('.', ','))
 	rc_data.set('PROGRAM_DESCRIPTION', PROGRAM_DESC)
-	rc_data.set('DATA_DIR',  meson.current_source_dir())
+	rc_data.set('DATA_DIR', meson.current_source_dir())
 	rc_data.set('BIN_NAME', BIN_NAME)
 
 	resource_rc = configure_file(
-		input : 'resource.rc.in',
-		output : 'resource.rc',
-		configuration : rc_data
+		input: 'resource.rc.in',
+		output: 'resource.rc',
+		configuration: rc_data
 	)
 
+	PROGRAM_SOURCES += windows.compile_resources(
+		resource_rc
+	)
+
+	PROGRAM_SOURCES += custom_target('win_gresource_c',
+		output: 'win_gresource.c',
+		input: 'windows.resource.gresource.xml',
+		command: [
+			gcr_executable,
+			'--sourcedir=../data/',
+			'--target=@OUTPUT@',
+			'--generate-source',
+			'@INPUT@'
+		]
+	)
+
+else
+
+	linux_gresource_xml = configure_file(
+		input: 'linux.resource.gresource.xml.in',
+		output: 'linux.resource.gresource.xml',
+		configuration: conf_data
+	)
+
+	PROGRAM_SOURCES += custom_target(
+		'linux_gresource_c',
+		output: 'linux_gresource.c',
+		input: linux_gresource_xml,
+		command: [
+			gcr_executable,
+			'--sourcedir=../data/',
+			'--target=@OUTPUT@',
+			'--generate-source',
+			'@INPUT@'
+		]
+	)
+
+endif
+
+'''
 	resource_res = custom_target('resource_res',
 		output : 'resource.res',
 		input : resource_rc,
@@ -130,43 +149,4 @@ if build_machine.system() == 'windows'
 			'@OUTPUT@'
 		]
 	)
-
-	PROGRAM_SOURCES += resource_res
-
-	win_gresource_c = custom_target('win_gresource_c',
-		output : 'win_gresource.c',
-		input : 'windows.resource.gresource.xml',
-		command : [
-			gcr_path,
-			'--sourcedir=../data/',
-			'--target=@OUTPUT@',
-			'--generate-source',
-			'@INPUT@'
-		]
-	)
-
-	PROGRAM_SOURCES += win_gresource_c
-
-else
-
-	linux_gresource_xml = configure_file(
-		input : 'linux.resource.gresource.xml.in',
-		output : 'linux.resource.gresource.xml',
-		configuration : conf_data
-	)
-
-	linux_gresource_c = custom_target('linux_gresource_c',
-		output : 'linux_gresource.c',
-		input : linux_gresource_xml,
-		command : [
-			gcr_path,
-			'--sourcedir=../data/',
-			'--target=@OUTPUT@',
-			'--generate-source',
-			'@INPUT@'
-		]
-	)
-
-	PROGRAM_SOURCES += linux_gresource_c
-
-endif
+'''

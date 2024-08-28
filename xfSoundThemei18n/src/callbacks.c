@@ -69,7 +69,7 @@ void on_app_activate (GtkApplication *app, gpointer user_data) {
 	
 	GFile *path = g_file_new_for_path(sounds_dir);
 	GFileEnumerator *enumerator = g_file_enumerate_children (path, "standard::*", G_FILE_QUERY_INFO_NONE, NULL, &error);
-	gtk_string_list_append (builder, _("Choose one"));
+	gtk_string_list_append (builder, _("Choose one of the list"));
 	if (!enumerator) {
 		g_print("g_file_enumerate_children %s: %s\n", _("generared an error"), error->message);
 		g_error_free(error);

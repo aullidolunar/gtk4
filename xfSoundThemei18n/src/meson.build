@@ -3,4 +3,4 @@
 sources = ['main.c', 'callbacks.c']
 
 PROGRAM_SOURCES += files(sources)
-SOURCES_I18N += files(sources)
+I18N_SOURCES = files(sources)

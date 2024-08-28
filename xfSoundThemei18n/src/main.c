@@ -1,9 +1,12 @@
 #include "callbacks.h"
 
 int main(int argc, char** argv) {
-
+	
+    gchar *ruta_directorio = g_path_get_dirname(argv[0]);
+    gchar *locale = g_build_filename(ruta_directorio, "locale", NULL);
+	
 	setlocale (LC_ALL, "");
-	bindtextdomain (PROGRAM_NAME, LOCALEDIR);
+	bindtextdomain (PROGRAM_NAME, locale);
 	bind_textdomain_codeset (PROGRAM_NAME, "UTF-8");
 	textdomain (PROGRAM_NAME);
 
@@ -28,5 +31,7 @@ int main(int argc, char** argv) {
 #ifndef G_OS_WIN32
 	xfconf_shutdown ();
 #endif
+    g_free(locale);
+    g_free(ruta_directorio);
 	return ret;
 }
