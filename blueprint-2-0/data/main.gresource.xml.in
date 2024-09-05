@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+	<gresource prefix="@PROGRAM_RESOURCE_PATH@">
+		<file compressed="true" preprocess="xml-stripblanks">@GLADE_FILE@</file>
+		<file alias="myenter.png">@PROJECT_DATA_DIR@/enter_24.png</file>
+		<file alias="myclose.png">@PROJECT_DATA_DIR@/close_24.png</file>
+	</gresource>
+</gresources>

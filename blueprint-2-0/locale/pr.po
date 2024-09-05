@@ -1,0 +1,49 @@
+# Language pr translations for blueprint package.
+# Copyright (C) 2024 aullidolunar
+# This file is distributed under the same license as the blueprint package.
+# Automatically generated, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: blueprint 2.0.0.0\n"
+"Report-Msgid-Bugs-To: aullidolunar@gmail.com\n"
+"POT-Creation-Date: 2024-09-04 23:19-0700\n"
+"PO-Revision-Date: 2024-09-04 22:54-0700\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: pr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ASCII\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../src/callbacks.c:10
+msgid "This is the inputed text"
+msgstr ""
+
+#: ../data/builder.glade:30
+msgid "Show your text in a message dialog"
+msgstr ""
+
+#: ../data/builder.glade:43
+msgid "_Show"
+msgstr ""
+
+#: ../data/builder.glade:57
+msgid "Exit the application"
+msgstr ""
+
+#: ../data/builder.glade:70
+msgid "_Close"
+msgstr ""
+
+#: ../data/builder.glade:85
+msgid "Your platform icon"
+msgstr ""
+
+#: ../data/blueprint.desktop.in:4
+msgid "blueprint"
+msgstr ""
+
+#: ../data/blueprint.desktop.in:5
+msgid "Using Gtk 4.14.5 and build with CMake 3.30.3"
+msgstr ""
