@@ -1,0 +1,80 @@
+# Spanish translations for blueprint package.
+# Copyright (C) 2024 THE blueprint'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the blueprint package.
+# Automatically generated, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: blueprint 4.0.0.0\n"
+"Report-Msgid-Bugs-To: aullidolunar@gmail.com\n"
+"POT-Creation-Date: 2024-09-11 23:26-0700\n"
+"PO-Revision-Date: 2024-09-11 23:16-0700\n"
+"Last-Translator: aullidolunar <aullidolunar@gmail.com>\n"
+"Language-Team: aullidolunar@gmail.com\n"
+"Language: es_MX\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.2\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: src/callbacks.c:10
+msgid "This your text, my friend"
+msgstr "Este es el texto que escribiste, mi amigo"
+
+#: build/data/unix/blueprint.desktop.in:4
+msgid "blueprint"
+msgstr "plantillaAzul"
+
+#: build/data/unix/blueprint.desktop.in:5
+msgid "Compile using Gtk 4.14.5 and build with Meson 1.5.1"
+msgstr "Compilado con Gtk 4.14.5 y por Meson 1.5.1"
+
+#: build/data/builder.glade:11
+msgid "Available languages"
+msgstr "Idiomas disponibles"
+
+#: build/data/builder.glade:12
+msgid "Spanish"
+msgstr "Español"
+
+#: build/data/builder.glade:13
+msgid "Italian"
+msgstr "Italiano"
+
+#: build/data/builder.glade:14
+msgid "Portuguese"
+msgstr "Portugués"
+
+#: build/data/builder.glade:15
+msgid "English"
+msgstr "Inglés"
+
+#: build/data/builder.glade:30
+msgid "Choose your language:"
+msgstr "Elige tu idioma:"
+
+#: build/data/builder.glade:50
+msgid "Write something nice"
+msgstr "Escribe algo lindo"
+
+#: build/data/builder.glade:59
+msgid "Show your text in a message dialog"
+msgstr "Muestra tu texto en un cuadro de diálogo"
+
+#: build/data/builder.glade:72
+msgid "_Show"
+msgstr "_Mostrar"
+
+#: build/data/builder.glade:86
+msgid "Exit the application"
+msgstr "Salir de la aplicación"
+
+#: build/data/builder.glade:99
+msgid "_Close"
+msgstr "_Cerrar"
+
+#: build/data/builder.glade:114
+msgid "Your platform icon"
+msgstr "El ícono de tu plataforma"

@@ -1,0 +1,77 @@
+# Language pr translations for blueprint package.
+# Copyright (C) 2024 THE blueprint'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the blueprint package.
+# Automatically generated, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: blueprint\n"
+"Report-Msgid-Bugs-To: aullidolunar@gmail.com\n"
+"POT-Creation-Date: 2024-09-11 23:26-0700\n"
+"PO-Revision-Date: 2024-09-11 21:47-0700\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: pr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ASCII\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/callbacks.c:10
+msgid "This your text, my friend"
+msgstr ""
+
+#: build/data/unix/blueprint.desktop.in:4
+msgid "blueprint"
+msgstr ""
+
+#: build/data/unix/blueprint.desktop.in:5
+msgid "Compile using Gtk 4.14.5 and build with Meson 1.5.1"
+msgstr ""
+
+#: build/data/builder.glade:11
+msgid "Available languages"
+msgstr ""
+
+#: build/data/builder.glade:12
+msgid "Spanish"
+msgstr ""
+
+#: build/data/builder.glade:13
+msgid "Italian"
+msgstr ""
+
+#: build/data/builder.glade:14
+msgid "Portuguese"
+msgstr ""
+
+#: build/data/builder.glade:15
+msgid "English"
+msgstr ""
+
+#: build/data/builder.glade:30
+msgid "Choose your language:"
+msgstr ""
+
+#: build/data/builder.glade:50
+msgid "Write something nice"
+msgstr ""
+
+#: build/data/builder.glade:59
+msgid "Show your text in a message dialog"
+msgstr ""
+
+#: build/data/builder.glade:72
+msgid "_Show"
+msgstr ""
+
+#: build/data/builder.glade:86
+msgid "Exit the application"
+msgstr ""
+
+#: build/data/builder.glade:99
+msgid "_Close"
+msgstr ""
+
+#: build/data/builder.glade:114
+msgid "Your platform icon"
+msgstr ""
