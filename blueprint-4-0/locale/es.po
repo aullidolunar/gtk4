@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: blueprint 4.0.0.0\n"
-"Report-Msgid-Bugs-To: aullidolunar@gmail.com\n"
-"POT-Creation-Date: 2024-09-11 23:26-0700\n"
-"PO-Revision-Date: 2024-09-11 23:16-0700\n"
+"Project-Id-Version: blueprint 4.0.0.1\n"
+"Report-Msgid-Bugs-To: \"aullidolunar@gmail.com\"\n"
+"POT-Creation-Date: 2024-09-13 21:45-0700\n"
+"PO-Revision-Date: 2024-09-13 06:57-0700\n"
 "Last-Translator: aullidolunar <aullidolunar@gmail.com>\n"
 "Language-Team: aullidolunar@gmail.com\n"
 "Language: es_MX\n"
@@ -22,14 +22,6 @@ msgstr ""
 #: src/callbacks.c:10
 msgid "This your text, my friend"
 msgstr "Este es el texto que escribiste, mi amigo"
-
-#: build/data/unix/blueprint.desktop.in:4
-msgid "blueprint"
-msgstr "plantillaAzul"
-
-#: build/data/unix/blueprint.desktop.in:5
-msgid "Compile using Gtk 4.14.5 and build with Meson 1.5.1"
-msgstr "Compilado con Gtk 4.14.5 y por Meson 1.5.1"
 
 #: build/data/builder.glade:11
 msgid "Available languages"
@@ -78,3 +70,11 @@ msgstr "_Cerrar"
 #: build/data/builder.glade:114
 msgid "Your platform icon"
 msgstr "El ícono de tu plataforma"
+
+#: build/data/unix/blueprint.desktop.in:4
+msgid "blueprint"
+msgstr "plantillaAzul"
+
+#: build/data/unix/blueprint.desktop.in:5
+msgid "Compile using Gtk 4.14.5 and build with Meson 1.5.1"
+msgstr "Compilado con Gtk 4.14.5 y por Meson 1.5.1"

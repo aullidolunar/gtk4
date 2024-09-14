@@ -1,3 +1,4 @@
 src/main.c
 src/callbacks.c
 build/data/builder.glade
+build/data/unix/blueprint.desktop.in

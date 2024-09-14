@@ -11,8 +11,8 @@ if not get_option('ENABLE_MAINTAINER')
 		meson.project_name(),
 		args: [
 			'--from-code=UTF-8',
-			'--msgid-bugs-address=aullidolunar@gmail.com', 
-			'--package-version="' + PROGRAM_VERSION + '"', 
+			'--msgid-bugs-address="aullidolunar@gmail.com"',
+			'--package-version="' + PROGRAM_VERSION + '"' 
 		]
 	)
 	

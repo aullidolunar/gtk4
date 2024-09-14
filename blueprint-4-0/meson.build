@@ -9,11 +9,11 @@
 # meson setup build -DENABLE_MAINTAINER=true --reconfigure
 # meson compile -C build init-locales
 # meson setup build -DENABLE_MAINTAINER=false --reconfigure
-# meson compile -C build blueprint-pot
 # meson compile -C build blueprint-update-po
-# meson compile -C build blueprint-gmo
+# Edit po files as need it. Then:
+# meson compile -C build [run]
 
-project('blueprint', 'c', version : '4.0.0.0', default_options : ['warning_level=3'])
+project('blueprint', 'c', version : '4.0.0.3', default_options : ['warning_level=3'])
 
 gtk4_dep         = dependency('gtk4', 'gmdule-2.0')
 

@@ -1,11 +1,11 @@
 # data/win
 
-PROGRAM_DATA_FILES += files(data_files[4], data_files[5])
+win_data_files = files(data_files_list[4], data_files_list[5])
 
 windows = import('windows')
 	
 resource = configure_file(
-	input: PROGRAM_DATA_FILES[2], # resource.rc.in
+	input: win_data_files[0], # resource.rc.in
 	output: 'resource.rc',
 	configuration: {
 		'PROGRAM_VERSION': PROGRAM_VERSION,
@@ -20,16 +20,10 @@ PROGRAM_SOURCES += windows.compile_resources(
 	include_directories: meson.current_source_dir()
 )
 
-win_gresource_xml = configure_file(
-	input: PROGRAM_DATA_FILES[3], # win.gresource.xml.in
+GRESOURCE_FILES_LIST += configure_file(
+	input: win_data_files[1], # win.gresource.xml.in
 	output: 'win.gresource.xml',
 	configuration: {
 		'PROGRAM_NAME': PROGRAM_NAME
 	}
-)
-
-PROGRAM_SOURCES += GNOME.compile_resources(
-	'win.gresource.xml',
-	win_gresource_xml,
-	source_dir: meson.current_source_dir()
 )

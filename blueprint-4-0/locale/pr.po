@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: blueprint\n"
-"Report-Msgid-Bugs-To: aullidolunar@gmail.com\n"
-"POT-Creation-Date: 2024-09-11 23:26-0700\n"
+"Report-Msgid-Bugs-To: \"aullidolunar@gmail.com\"\n"
+"POT-Creation-Date: 2024-09-13 21:45-0700\n"
 "PO-Revision-Date: 2024-09-11 21:47-0700\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -18,14 +18,6 @@ msgstr ""
 
 #: src/callbacks.c:10
 msgid "This your text, my friend"
-msgstr ""
-
-#: build/data/unix/blueprint.desktop.in:4
-msgid "blueprint"
-msgstr ""
-
-#: build/data/unix/blueprint.desktop.in:5
-msgid "Compile using Gtk 4.14.5 and build with Meson 1.5.1"
 msgstr ""
 
 #: build/data/builder.glade:11
@@ -74,4 +66,12 @@ msgstr ""
 
 #: build/data/builder.glade:114
 msgid "Your platform icon"
+msgstr ""
+
+#: build/data/unix/blueprint.desktop.in:4
+msgid "blueprint"
+msgstr ""
+
+#: build/data/unix/blueprint.desktop.in:5
+msgid "Compile using Gtk 4.14.5 and build with Meson 1.5.1"
 msgstr ""

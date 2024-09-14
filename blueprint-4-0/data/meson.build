@@ -1,6 +1,6 @@
 # data
 
-data_files = [
+data_files_list = [
 	'builder.blp.in', # 0
 	'main.gresource.xml.in', # 1
 	'unix.gresource.xml.in', # unix: 2
@@ -11,12 +11,14 @@ data_files = [
 
 GNOME = import('gnome')
 
+GRESOURCE_FILES_LIST = []
+
 blueprint_executable = find_program('blueprint-compiler')
 
-PROGRAM_DATA_FILES = files(data_files[0], data_files[1])
+data_files = files(data_files_list[0], data_files_list[1])
 
 blp_file = configure_file(
-	input: PROGRAM_DATA_FILES[0], # builder.blp.in
+	input: data_files[0], # builder.blp.in
 	output: 'builder.blp',
 	configuration: {
 		'PROGRAM_NAME': PROGRAM_NAME,
@@ -25,7 +27,7 @@ blp_file = configure_file(
 )
 
 builder_glade_file = 'builder.glade'
-builder_glade = custom_target(
+builder_file = custom_target(
 	input: blp_file,
 	output: builder_glade_file,
 	command: [
@@ -35,15 +37,18 @@ builder_glade = custom_target(
 		'@OUTPUT@',
 		'@INPUT@'
 	]
+
 )
+
+I18N_SOURCES += builder_file
 
 UI_RESOURCE_PATH = PROGRAM_RES_PATH + '/' + builder_glade_file
 PROGRAM_DEFS += [
 	'-DUI_RESOURCE_PATH="' + UI_RESOURCE_PATH + '"',
 ]
 
-main_gresource_xml = configure_file(
-	input: PROGRAM_DATA_FILES[1], # main.gresource.xml.in
+GRESOURCE_FILES_LIST += configure_file(
+	input: data_files[1], # main.gresource.xml.in
 	output: 'main.gresource.xml',
 	configuration: {
 		'PROGRAM_NAME':	PROGRAM_NAME,
@@ -53,17 +58,15 @@ main_gresource_xml = configure_file(
 	}
 )
 
-PROGRAM_SOURCES += GNOME.compile_resources(
-	'main.gresource.xml',
-	main_gresource_xml,
-	source_dir: meson.current_source_dir(),
-	dependencies: builder_glade
-)
+os_dir = IS_WIN ? 'win' : 'unix'
 
-if IS_WIN	
-	subdir('win')
-else
-	subdir('unix')
-endif
+subdir(os_dir)
 
-I18N_SOURCES += builder_glade
+foreach gresource_file: GRESOURCE_FILES_LIST
+	PROGRAM_SOURCES += GNOME.compile_resources(
+		FS.name(gresource_file),
+		gresource_file,
+		dependencies: builder_file,
+		source_dir: meson.current_source_dir() / os_dir
+	)
+endforeach
