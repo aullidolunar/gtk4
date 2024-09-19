@@ -1,0 +1,74 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: plano 5.0.0.1\n"
+"Report-Msgid-Bugs-To: aullidolunar@gmail.com\n"
+"POT-Creation-Date: 2024-09-17 21:51-0700\n"
+"PO-Revision-Date: \n"
+"Last-Translator: aullidolunar <aullidolunar@gmail.com>\n"
+"Language-Team: aullidolunar\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.4.2\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: src/callbacks.c:10
+msgid "This your text, my friend"
+msgstr "Este é o seu texto, meu amigo"
+
+#: cmake_build/data/builder.glade:11
+msgid "Available languages"
+msgstr "Idiomas disponíveis"
+
+#: cmake_build/data/builder.glade:12
+msgid "Spanish"
+msgstr "Espanhol"
+
+#: cmake_build/data/builder.glade:13
+msgid "Italian"
+msgstr "Italiano"
+
+#: cmake_build/data/builder.glade:14
+msgid "Portuguese"
+msgstr "Português"
+
+#: cmake_build/data/builder.glade:15
+msgid "English"
+msgstr "Inglês"
+
+#: cmake_build/data/builder.glade:30
+msgid "Choose your language:"
+msgstr "Escolha o seu idioma:"
+
+#: cmake_build/data/builder.glade:50
+msgid "Write something nice"
+msgstr "Escreva algo legal"
+
+#: cmake_build/data/builder.glade:59
+msgid "Show your text in a message dialog"
+msgstr "Mostre seu texto em uma caixa de diálogo"
+
+#: cmake_build/data/builder.glade:72
+msgid "_Show"
+msgstr "_Mostrar"
+
+#: cmake_build/data/builder.glade:86
+msgid "Exit the application"
+msgstr "Sair da aplicação"
+
+#: cmake_build/data/builder.glade:99
+msgid "_Close"
+msgstr "_Fechar"
+
+#: cmake_build/data/builder.glade:114
+msgid "Your platform icon"
+msgstr "Seu ícone da plataforma"
+
+#: cmake_build/data/unix/blueprint.desktop.in:4
+msgid "blueprint"
+msgstr "plano"
+
+#: cmake_build/data/unix/blueprint.desktop.in:5
+msgid "Compile using Gtk 4.14.5 and build with %s"
+msgstr "Compile usando Gtk 4.14.5 e construa com %s"

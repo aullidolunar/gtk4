@@ -1,0 +1,4 @@
+src/callbacks.c
+src/main.c
+cmake_build/data/builder.glade
+cmake_build/data/unix/blueprint.desktop.in

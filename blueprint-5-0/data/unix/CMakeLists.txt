@@ -1,0 +1,17 @@
+# data/unix
+
+set(PROGRAM_ICON "${CMAKE_CURRENT_SOURCE_DIR}/linux-icon-64.png")
+
+COMPILE_GLIB_RESOURCES(
+	"${BIN_NAME}"
+	"${DIR_NAME}"
+	"${CMAKE_CURRENT_SOURCE_DIR}"
+)
+
+configure_file(
+	"desktop.in"
+	"${CMAKE_CURRENT_BINARY_DIR}/${PROGRAM_NAME}.desktop.in"
+)
+
+list(APPEND DATA_SOURCES "${CMAKE_CURRENT_BINARY_DIR}/${PROGRAM_NAME}.desktop.in")
+set(DATA_SOURCES ${DATA_SOURCES} PARENT_SCOPE)
