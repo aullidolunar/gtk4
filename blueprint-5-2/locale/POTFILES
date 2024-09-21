@@ -1,0 +1,4 @@
+src/main.c
+src/callbacks.c
+meson_build/data/builder.glade
+meson_build/data/unix/blueprint.desktop.in
