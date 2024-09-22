@@ -41,20 +41,22 @@ I18N_DEPS += gettext[0]
 
 if not IS_WIN
 	
-	if FS.exists(meson.current_build_dir() / PROGRAM_NAME + '.desktop')
-		run_command(
-			PYTHON_EXECUTABLE,
-			PY_SCRIPTS[2], # delete.py
-			meson.current_build_dir() / PROGRAM_NAME + '.desktop',
-			check: false
-		)
-	endif
-	
-	I18N_DEPS += i18n.merge_file(
+	desktopfile = i18n.merge_file(
 		input: DESKTOP_IN,
 		output: PROGRAM_NAME + '.desktop',
 		type: 'desktop',
 		po_dir: meson.current_source_dir()
 	)
+	
+	run_target(
+		'desktop-update',
+		command: [
+			PYTHON_EXECUTABLE,
+			PY_SCRIPTS[2], # delete.py
+			desktopfile
+		]
+	)
+	
+	I18N_DEPS += desktopfile
 
 endif

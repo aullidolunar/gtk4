@@ -71,4 +71,4 @@ msgstr "plantillaAzul"
 
 #: meson_build/data/unix/blueprint.desktop.in:5
 msgid "Compile using Gtk 4.16.1 and build with Meson 1.5.1"
-msgstr "Compilado con Gtk 4.16.1 y construído Meson 1.5.1"
+msgstr "Compilado en Gtk 4.16.1 por Meson 1.5.1"

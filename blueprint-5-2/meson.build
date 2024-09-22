@@ -13,7 +13,7 @@
 # For add/remove languages edit LINGUAS and then:
 # meson setup meson_build --reconfigure
 # Generate updated pot and po files with:
-# meson compile -C meson_build blueprint-update-po
+# meson compile -C meson_build blueprint-update-po [desktop-update]
 # Edit po files as need it, then:
 # meson compile -C meson_build [run]
 
