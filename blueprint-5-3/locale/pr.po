@@ -1,0 +1,74 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: plano 5.3.0.0\n"
+"Report-Msgid-Bugs-To: \"aullidolunar@gmail.com\"\n"
+"POT-Creation-Date: 2024-09-24 18:38-0700\n"
+"PO-Revision-Date: \n"
+"Last-Translator: aullidolunar <aullidolunar@gmail.com>\n"
+"Language-Team: aullidolunar\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.4.2\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: src/callbacks.c:10
+msgid "This your text, my friend"
+msgstr "Este é o seu texto, meu amigo"
+
+#: _build/data/builder.glade:11
+msgid "Available languages"
+msgstr "Idiomas disponíveis"
+
+#: _build/data/builder.glade:12
+msgid "Spanish"
+msgstr "Espanhol"
+
+#: _build/data/builder.glade:13
+msgid "Italian"
+msgstr "Italiano"
+
+#: _build/data/builder.glade:14
+msgid "Portuguese"
+msgstr "Português"
+
+#: _build/data/builder.glade:15
+msgid "English"
+msgstr "Inglês"
+
+#: _build/data/builder.glade:30
+msgid "Choose your language:"
+msgstr "Escolha o seu idioma:"
+
+#: _build/data/builder.glade:50
+msgid "Write something nice"
+msgstr "Escreva algo legal"
+
+#: _build/data/builder.glade:59
+msgid "Show your text in a message dialog"
+msgstr "Mostre seu texto em uma caixa de diálogo"
+
+#: _build/data/builder.glade:72
+msgid "_Show"
+msgstr "_Mostrar"
+
+#: _build/data/builder.glade:86
+msgid "Exit the application"
+msgstr "Sair da aplicação"
+
+#: _build/data/builder.glade:99
+msgid "_Close"
+msgstr "_Fechar"
+
+#: _build/data/builder.glade:114
+msgid "Your platform icon"
+msgstr "Seu ícone da plataforma"
+
+#: _build/data/blueprint.template.desktop.in:4
+msgid "blueprint"
+msgstr "plano"
+
+#: _build/data/blueprint.template.desktop.in:5
+msgid "Compile using Gtk @0@ and build with Meson @1@"
+msgstr "Compile usando Gtk @0@ e construa com Meson @1@"
