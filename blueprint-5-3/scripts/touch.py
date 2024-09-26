@@ -3,10 +3,6 @@
 import os
 import sys
 
-def touch(_file):
-	try:
-		os.mknod(_file)
-	except FileExistsError:
-		pass
+with open(sys.argv[1], 'w') as tf:
+	pass
 
-touch(sys.argv[1])
