@@ -1,8 +1,27 @@
+#include <glib/gi18n.h>
+#include <locale.h>
 #include "MesonHelper.h"
 
 void showAboutDlg(GtkWindow* parent) {
+
+  const gchar *toolkit_version = "@TOOLKIT_VERSION@";
+  const gchar *meson_version = "@MESON_VERSION@";
+  
+  GRegex *regex = g_regex_new("@cero@", 0, 0, NULL);
+  gchar *resultado = g_regex_replace(regex, _("@PROGRAM_DESC@"), -1, 0, toolkit_version, 0, NULL);
+  g_regex_unref(regex);
+  
+  regex = g_regex_new("@uno@", 0, 0, NULL);
+  gchar *final = g_regex_replace(regex, resultado, -1, 0, meson_version, 0, NULL);
+  g_regex_unref(regex);
+  
+  g_free(resultado);
+
   gtk_show_about_dialog(parent,
     "version", PROGRAM_VERSION,
+    "comments", final,
 	NULL
   );
+  
+  g_free(final);
 }
