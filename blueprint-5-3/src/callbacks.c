@@ -1,16 +1,23 @@
 #include "callbacks.h"
+#include "MesonHelper.h"
 
 G_MODULE_EXPORT void on_button1_clicked(GtkGrid* grid) {
 	GtkAlertDialog *dialog;
 	
 	GtkWidget *parent = gtk_widget_get_parent(GTK_WIDGET(grid));
-	GtkWidget *entry = gtk_grid_get_child_at(grid, 0, 1);
+	GtkWidget *check1 = gtk_grid_get_child_at(grid, 0, 2);
 	
-	const char* entry_text = gtk_editable_get_text (GTK_EDITABLE(entry));
-	dialog = gtk_alert_dialog_new (_("This your text, my friend"));
-	gtk_alert_dialog_set_detail (dialog, entry_text);
-	gtk_alert_dialog_show (dialog, GTK_WINDOW(parent));
-	g_object_unref (dialog);
+	if (gtk_check_button_get_active(GTK_CHECK_BUTTON(check1))) {
+		showAboutDlg(GTK_WINDOW(parent));
+	} else {
+		GtkWidget *entry = gtk_grid_get_child_at(grid, 0, 1);
+		const char* entry_text = gtk_editable_get_text (GTK_EDITABLE(entry));
+		dialog = gtk_alert_dialog_new (_("This your text, my friend"));
+		gtk_alert_dialog_set_detail (dialog, entry_text);
+		gtk_alert_dialog_show (dialog, GTK_WINDOW(parent));
+		g_object_unref (dialog);
+	}
+	
 }
 
 G_MODULE_EXPORT void on_dropdown_activate(GtkDropDown* dropdown) {

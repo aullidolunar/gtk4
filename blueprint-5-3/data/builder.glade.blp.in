@@ -90,12 +90,21 @@ ApplicationWindow window1 {
 			}
 		}
 		
+		CheckButton check1 {
+			label: _('Show Gtk about dialog');
+			layout {
+				row: 2;
+				column: 0;
+				column-span: 2;
+			}
+		}
+		
 		Image {
 			resource: '/platform/main';
 			tooltip-text: _('Your platform icon');
 			pixel-size: 64;
 			layout {
-				row: 2;
+				row: 3;
 				column: 0;
 				column-span: 2;
 			}

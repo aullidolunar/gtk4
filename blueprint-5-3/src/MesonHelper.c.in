@@ -1,0 +1,8 @@
+#include "MesonHelper.h"
+
+void showAboutDlg(GtkWindow* parent) {
+  gtk_show_about_dialog(parent,
+    "version", PROGRAM_VERSION,
+	NULL
+  );
+}

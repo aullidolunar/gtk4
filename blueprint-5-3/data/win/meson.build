@@ -11,7 +11,7 @@ resource = configure_file(
 		'PROGRAM_VERSION': PROGRAM_VERSION,
 		'PROGRAM_VERSION_COMMA': PROGRAM_VERSION.replace('.', ','),
 		'BIN_NAME': BIN_NAME, 
-		'PROGRAM_DESCRIPTION': new_desc.format(gtk4_dep.version(), meson.version()) 
+		'PROGRAM_DESCRIPTION': new_desc.format(TOOLKIT_VERSION, MESON_VERSION) 
 	}
 )
 	

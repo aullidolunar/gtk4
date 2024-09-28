@@ -1,4 +1,5 @@
 src/main.c
 src/callbacks.c
+_build/src/MesonHelper.c
 _build/data/builder.glade
 _build/data/blueprint.template.desktop.in

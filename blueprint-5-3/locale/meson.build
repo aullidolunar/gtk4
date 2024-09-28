@@ -15,7 +15,7 @@ foreach lang: langs
 			PYTHON_EXECUTABLE,
 			PY_SCRIPTS[0], # touch.py
 			po_file,
-			check: false
+			check: true
 		)
 
 	endif
@@ -28,7 +28,7 @@ run_command(
 	PY_SCRIPTS[1], # potfiles.py
 	meson.current_source_dir(),
 	I18N_SOURCES,
-	check: false
+	check: true
 )
 
 i18n = import('i18n')
@@ -38,6 +38,7 @@ gettext = i18n.gettext(
 	args: [
 		'--from-code=UTF-8',
 		'--msgid-bugs-address="aullidolunar@gmail.com"',
+		'--package-name="' + PROGRAM_NAME + '"',
 		'--package-version="' + PROGRAM_VERSION + '"'
 	]
 )
@@ -57,16 +58,16 @@ desktopfile_in = custom_target(
 )
 
 desktopfile = custom_target(
-	input: desktopfile_in,
-	output: '@BASENAME@',
-	command: [
-		PYTHON_EXECUTABLE,
-		PY_SCRIPTS[2], # desktop.py
-		'@INPUT@',
-		gtk4_dep.version(),
-		meson.version(),
-		'@OUTPUT@'
-	]
+  input: desktopfile_in,
+  output: '@BASENAME@',
+  command: [
+    PYTHON_EXECUTABLE,
+    PY_SCRIPTS[2], # desktop.py
+    '@INPUT@',
+	TOOLKIT_VERSION,
+	MESON_VERSION,
+	'@OUTPUT@'
+  ]
 )
 
 # build mo files and generate desktop file with executable:

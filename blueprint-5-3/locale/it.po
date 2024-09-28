@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: progetto 5.3.0.0\n"
 "Report-Msgid-Bugs-To: \"aullidolunar@gmail.com\"\n"
-"POT-Creation-Date: 2024-09-24 18:38-0700\n"
+"POT-Creation-Date: 2024-09-27 21:56-0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: aullidolunar <aullidolunar@gmail.com>\n"
 "Language-Team: aullidolunar\n"
@@ -13,7 +13,7 @@ msgstr ""
 "X-Generator: Poedit 3.4.2\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
-#: src/callbacks.c:10
+#: src/callbacks.c:15
 msgid "This your text, my friend"
 msgstr "Questo è il tuo testo, amico mio"
 
@@ -61,7 +61,11 @@ msgstr "Esci dall'applicazione"
 msgid "_Close"
 msgstr "_Chiudi"
 
-#: _build/data/builder.glade:114
+#: _build/data/builder.glade:113
+msgid "Show Gtk about dialog"
+msgstr ""
+
+#: _build/data/builder.glade:124
 msgid "Your platform icon"
 msgstr "La tua icona della piattaforma"
 

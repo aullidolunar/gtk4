@@ -12,7 +12,7 @@
 # Edit po files as need it, then:
 # meson compile -C _build [run]
 
-project('blueprint', 'c', version: '5.3.0.2', default_options: ['c_std=gnu11,c11', 'warning_level=3'])
+project('blueprint', 'c', version: '5.3.0.4', default_options: ['c_std=gnu11,c11', 'warning_level=3'])
 
 gtk4_dep         = dependency('gtk4', 'gmdule-2.0')
 
@@ -25,9 +25,12 @@ version_str      = PROGRAM_VERSION.split('.')
 BIN_NAME         = PROGRAM_NAME + '-' + version_str[0] + '-' + version_str[1]
 PROGRAM_ID       = 'gtk4.aullidolunar.' + PROGRAM_NAME
 PROGRAM_RES_PATH = '/' + PROGRAM_ID.replace('.', '/')
+TOOLKIT_VERSION  = gtk4_dep.version()
+MESON_VERSION    = meson.version()
 
 PROGRAM_DEFS     = [
 	'-DPROGRAM_NAME="' + PROGRAM_NAME + '"',
+	'-DPROGRAM_VERSION="' + PROGRAM_VERSION + '"',
 	'-DGETTEXT_PACKAGE="' + PROGRAM_NAME + '"',
 	'-DPROGRAM_TITLE="' + PROGRAM_TITLE + '"',
 	'-DPROGRAM_ID="' + PROGRAM_ID + '"',
@@ -51,6 +54,7 @@ FS = import('fs')
 PROGRAM_SOURCES  = []
 I18N_SOURCES     = []
 I18N_DEPS        = []
+PROGRAM_INCDIRS  = []
 
 IS_WIN = (build_machine.system() == 'windows') ? true : false
 
@@ -60,13 +64,14 @@ subdir('data')
 subdir('locale')
 
 bin_path = executable(
-	BIN_NAME,
-	PROGRAM_SOURCES,
-	I18N_DEPS,
-	dependencies: PROGRAM_DEPS,
-	c_args: PROGRAM_DEFS,
-	native: true,
-	export_dynamic: true
+  BIN_NAME,
+  PROGRAM_SOURCES,
+  I18N_DEPS,
+  dependencies: PROGRAM_DEPS,
+  c_args: PROGRAM_DEFS,
+  include_directories: PROGRAM_INCDIRS,
+  native: true,
+  export_dynamic: true
 )
 
 run_target(
