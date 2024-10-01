@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
-	<gresource prefix="/platform">
-		<file alias="main">windows-icon-64.png</file>
+	<gresource prefix="@PROGRAM_RESOURCE_PATH@">
+		<file alias="platform.png">windows-icon-64.png</file>
 	</gresource>
 </gresources>

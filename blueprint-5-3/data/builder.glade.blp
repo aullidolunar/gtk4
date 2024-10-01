@@ -1,0 +1,125 @@
+using Gtk 4.0;
+
+ApplicationWindow window1 {
+	
+	Grid grid1 {
+		row-spacing: 10;
+		column-spacing: 10;
+		margin-start: 10;
+		margin-end: 10;
+		margin-bottom: 10;
+		margin-top: 10;
+		
+		Image {
+			icon-name: 'platform';
+			tooltip-text: _('Your platform icon');
+			pixel-size: 64;
+			layout {
+				row: 0;
+				column: 0;
+				row-span: 3;
+			}
+		}
+		
+		Label {
+			label: _("Choose your language:");
+			layout {
+				row: 0;
+				column: 1;
+			}
+		}
+		
+		DropDown {
+			model: StringList {
+				strings [
+					_("Available languages"),
+					_("Spanish"),
+					_("Italian"),
+					_("Portuguese"),
+					_("English")
+				]
+			};
+			notify::selected => $on_dropdown_activate();
+			layout {
+				row: 0;
+				column: 2;
+			}
+		}
+		
+		Box {
+			orientation: horizontal;
+			hexpand: true;
+			layout {
+				row: 0;
+				column: 3;
+			}
+		}
+		
+		Entry {
+			hexpand: true;
+			tooltip-text: _("Write something nice");
+			sensitive: bind check1.active inverted;
+			layout {
+				row: 1;
+				column: 1;
+				column-span: 3;
+			}
+		}
+		
+		Button {
+			tooltip-text: _("Show your text in a message dialog");
+			clicked => $on_button1_clicked(grid1);
+			Box {
+				orientation: horizontal;
+				spacing: 5;
+				Image {
+					icon-name: 'myenter';
+				}
+				Label {
+					label: _('_Show');
+					use-underline: true;
+				}
+			}
+			layout {
+				row: 1;
+				column: 4;
+			}
+		}
+		
+		Button {
+			tooltip-text: _("Exit the application");
+			clicked => $gtk_window_destroy(window1) swapped;
+			Box {
+				orientation: horizontal;
+				spacing: 5;
+				Image {
+					icon-name: 'myclose';
+				}
+				Label {
+					label: _('_Close');
+					use-underline: true;
+				}
+			}
+			layout {
+				row: 1;
+				column: 5;
+			}
+		}
+		
+		CheckButton check1 {
+			label: _('Show Gtk about dialog');
+			layout {
+				row: 2;
+				column: 1;
+				column-span: 2;
+			}
+		}
+			
+	}
+}
+
+
+/*
+ https://gnome-team.pages.debian.net/blueprint-compiler/index.html
+ https://jwestman.pages.gitlab.gnome.org/blueprint-compiler/setup.html
+*/

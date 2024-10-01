@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \"blueprint\" \"5.3.0.4\"\n"
 "Report-Msgid-Bugs-To: \"aullidolunar@gmail.com\"\n"
-"POT-Creation-Date: 2024-09-27 21:56-0700\n"
+"POT-Creation-Date: 2024-09-30 09:45-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,66 +17,66 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/callbacks.c:15
+#: _build/src/MesonHelper.h:4 _build/data/template.desktop.in:5
+msgid "Compile using Gtk @0@ and build with Meson @1@"
+msgstr ""
+
+#: src/callbacks.c:35
 msgid "This your text, my friend"
 msgstr ""
 
-#: _build/data/builder.glade:11
-msgid "Available languages"
-msgstr ""
-
-#: _build/data/builder.glade:12
-msgid "Spanish"
-msgstr ""
-
-#: _build/data/builder.glade:13
-msgid "Italian"
-msgstr ""
-
-#: _build/data/builder.glade:14
-msgid "Portuguese"
-msgstr ""
-
-#: _build/data/builder.glade:15
-msgid "English"
-msgstr ""
-
-#: _build/data/builder.glade:30
-msgid "Choose your language:"
-msgstr ""
-
-#: _build/data/builder.glade:50
-msgid "Write something nice"
-msgstr ""
-
-#: _build/data/builder.glade:59
-msgid "Show your text in a message dialog"
-msgstr ""
-
-#: _build/data/builder.glade:72
-msgid "_Show"
-msgstr ""
-
-#: _build/data/builder.glade:86
-msgid "Exit the application"
-msgstr ""
-
-#: _build/data/builder.glade:99
-msgid "_Close"
-msgstr ""
-
-#: _build/data/builder.glade:113
-msgid "Show Gtk about dialog"
-msgstr ""
-
-#: _build/data/builder.glade:124
+#: _build/data/builder.glade:21
 msgid "Your platform icon"
 msgstr ""
 
-#: _build/data/blueprint.template.desktop.in:4
-msgid "blueprint"
+#: _build/data/builder.glade:32
+msgid "Choose your language:"
 msgstr ""
 
-#: _build/data/blueprint.template.desktop.in:5
-msgid "Compile using Gtk @0@ and build with Meson @1@"
+#: _build/data/builder.glade:44
+msgid "Available languages"
+msgstr ""
+
+#: _build/data/builder.glade:45
+msgid "Spanish"
+msgstr ""
+
+#: _build/data/builder.glade:46
+msgid "Italian"
+msgstr ""
+
+#: _build/data/builder.glade:47
+msgid "Portuguese"
+msgstr ""
+
+#: _build/data/builder.glade:48
+msgid "English"
+msgstr ""
+
+#: _build/data/builder.glade:72
+msgid "Write something nice"
+msgstr ""
+
+#: _build/data/builder.glade:83
+msgid "Show your text in a message dialog"
+msgstr ""
+
+#: _build/data/builder.glade:96
+msgid "_Show"
+msgstr ""
+
+#: _build/data/builder.glade:110
+msgid "Exit the application"
+msgstr ""
+
+#: _build/data/builder.glade:123
+msgid "_Close"
+msgstr ""
+
+#: _build/data/builder.glade:137
+msgid "Show Gtk about dialog"
+msgstr ""
+
+#: _build/data/template.desktop.in:4
+msgid "blueprint"
 msgstr ""

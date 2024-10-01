@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
 	<gresource prefix="@PROGRAM_RESOURCE_PATH@">
-		<file compressed="true" preprocess="xml-stripblanks" alias="@GLADE_FILE@">@GLADE_PATH@/@GLADE_FILE@</file>
+		<file compressed="true" preprocess="xml-stripblanks">@GLADE_FILE@</file>
 		<file alias="myenter.png">enter_24.png</file>
 		<file alias="myclose.png">close_24.png</file>
 	</gresource>

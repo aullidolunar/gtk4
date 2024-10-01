@@ -2,8 +2,6 @@
 <gresources>
 	<gresource prefix="@PROGRAM_RESOURCE_PATH@">
 		<file alias="/icons/64x64/apps/@PROGRAM_NAME@.png">main_64.png</file>
-	</gresource>
-	<gresource prefix="/platform">
-		<file alias="main">linux-icon-64.png</file>
+		<file alias="platform.png">linux-icon-64.png</file>
 	</gresource>
 </gresources>

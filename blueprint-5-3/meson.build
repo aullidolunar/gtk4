@@ -12,7 +12,7 @@
 # Edit po files as need it, then:
 # meson compile -C _build [run]
 
-project('blueprint', 'c', version: '5.3.0.4', default_options: ['c_std=gnu11,c11', 'warning_level=3'])
+project('blueprint', 'c', version: '5.3.0.5', default_options: ['c_std=gnu11,c11', 'warning_level=3'])
 
 gtk4_dep         = dependency('gtk4', 'gmdule-2.0')
 
@@ -33,6 +33,8 @@ PROGRAM_DEFS     = [
 	'-DPROGRAM_VERSION="' + PROGRAM_VERSION + '"',
 	'-DGETTEXT_PACKAGE="' + PROGRAM_NAME + '"',
 	'-DPROGRAM_TITLE="' + PROGRAM_TITLE + '"',
+	'-DTOOLKIT_VERSION="' + TOOLKIT_VERSION + '"',
+	'-DMESON_VERSION="' + MESON_VERSION + '"',
 	'-DPROGRAM_ID="' + PROGRAM_ID + '"',
 	'-DPROGRAM_RESOURCE_PATH="' + PROGRAM_RES_PATH + '"',
 	'-DUSE_GTK_CSD="' + get_option('USE_GTK_CSD') + '"'

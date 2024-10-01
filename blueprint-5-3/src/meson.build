@@ -1,19 +1,18 @@
 # src
 
-MesonHelperC = configure_file(
-  input: 'MesonHelper.c.in',
+MesonHelper_h = configure_file(
+  input: files('MesonHelper.h.in'),
   output: '@BASENAME@',
   configuration: {
-    'PROGRAM_DESC': PROGRAM_DESC,
-    'TOOLKIT_VERSION': TOOLKIT_VERSION,
-    'MESON_VERSION': MESON_VERSION,
-	'cero': '@0@',
-	'uno': '@1@'
+    'PROGRAM_DESC': PROGRAM_DESC
   }
 )
 
-sources = ['main.c', 'callbacks.c', MesonHelperC.full_path()]
-PROGRAM_SOURCES += files(sources)
+sources = files('main.c', 'callbacks.c')
+
+PROGRAM_SOURCES += sources
+
+sources += MesonHelper_h
 
 foreach src: sources
 	I18N_SOURCES += FS.relative_to(src, meson.project_source_root())
