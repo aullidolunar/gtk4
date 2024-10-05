@@ -1,0 +1,81 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: blueprint 5.4.0.1\n"
+"Report-Msgid-Bugs-To: \"aullidolunar@gmail.com\"\n"
+"POT-Creation-Date: 2024-10-04 06:23-0700\n"
+"PO-Revision-Date: \n"
+"Last-Translator: aullidolunar <aullidolunar@gmail.com>\n"
+"Language-Team: aullidolunar\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.5\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: src/callbacks.c:25
+msgid "This your text, my friend"
+msgstr "Ceci est votre texte, mon ami"
+
+#: _build/src/MesonHelper.h:4 _build/data/blueprint.desktop.in:5
+msgid "Gtk4 application demo"
+msgstr "Démonstration de l'application Gtk4"
+
+#: _build/data/builder.glade:21
+msgid "Your platform icon"
+msgstr "Icône de votre plateforme"
+
+#: _build/data/builder.glade:32
+msgid "Choose your language:"
+msgstr "Choisissez votre langue:"
+
+#: _build/data/builder.glade:44
+msgid "Available languages"
+msgstr "Langues disponibles"
+
+#: _build/data/builder.glade:45
+msgid "Spanish"
+msgstr "Espagnol"
+
+#: _build/data/builder.glade:46
+msgid "Italian"
+msgstr "Italien"
+
+#: _build/data/builder.glade:47
+msgid "Portuguese"
+msgstr "Portugais"
+
+#: _build/data/builder.glade:48
+msgid "English"
+msgstr "Anglais"
+
+#: _build/data/builder.glade:72
+msgid "Write something nice"
+msgstr "Écrivez quelque chose de gentil"
+
+#: _build/data/builder.glade:83
+msgid "Show your text in a message dialog"
+msgstr "Afficher votre texte dans une boîte de dialogue"
+
+#: _build/data/builder.glade:96
+msgid "_Show"
+msgstr "_Afficher"
+
+#: _build/data/builder.glade:110
+msgid "Exit the application"
+msgstr "Quitter l'application"
+
+#: _build/data/builder.glade:123
+msgid "_Close"
+msgstr "_Fermer"
+
+#: _build/data/builder.glade:137
+msgid "Show Gtk about dialog"
+msgstr "Afficher la boîte de dialogue À propos de Gtk"
+
+#: _build/data/blueprint.desktop.in:4
+msgid "blueprint"
+msgstr "blueprint"
+
+#~ msgid "Compile using Gtk @0@ and build with Meson @1@"
+#~ msgstr "Compiler avec Gtk @0@ et construire avec Meson @1@"

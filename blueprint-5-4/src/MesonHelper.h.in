@@ -1,0 +1,6 @@
+#ifndef MESON_HELPER_H_INC
+#define MESON_HELPER_H_INC
+
+#define PROGRAM_DESC _("@PROGRAM_DESC@")
+
+#endif

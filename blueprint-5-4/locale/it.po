@@ -1,0 +1,81 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: progetto 5.4.0.1\n"
+"Report-Msgid-Bugs-To: \"aullidolunar@gmail.com\"\n"
+"POT-Creation-Date: 2024-10-04 06:23-0700\n"
+"PO-Revision-Date: \n"
+"Last-Translator: aullidolunar <aullidolunar@gmail.com>\n"
+"Language-Team: aullidolunar\n"
+"Language: it_IT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.5\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: src/callbacks.c:25
+msgid "This your text, my friend"
+msgstr "Questo è il tuo testo, amico mio"
+
+#: _build/src/MesonHelper.h:4 _build/data/blueprint.desktop.in:5
+msgid "Gtk4 application demo"
+msgstr "Applicazione demo Gtk4"
+
+#: _build/data/builder.glade:21
+msgid "Your platform icon"
+msgstr "La tua icona della piattaforma"
+
+#: _build/data/builder.glade:32
+msgid "Choose your language:"
+msgstr "Scegli la tua lingua:"
+
+#: _build/data/builder.glade:44
+msgid "Available languages"
+msgstr "Lingue disponibili"
+
+#: _build/data/builder.glade:45
+msgid "Spanish"
+msgstr "Spagnolo"
+
+#: _build/data/builder.glade:46
+msgid "Italian"
+msgstr "Italiano"
+
+#: _build/data/builder.glade:47
+msgid "Portuguese"
+msgstr "Portoghese"
+
+#: _build/data/builder.glade:48
+msgid "English"
+msgstr "Inglese"
+
+#: _build/data/builder.glade:72
+msgid "Write something nice"
+msgstr "Scrivi qualcosa di carino"
+
+#: _build/data/builder.glade:83
+msgid "Show your text in a message dialog"
+msgstr "Mostra il tuo testo in una finestra di dialogo"
+
+#: _build/data/builder.glade:96
+msgid "_Show"
+msgstr "_Mostra"
+
+#: _build/data/builder.glade:110
+msgid "Exit the application"
+msgstr "Esci dall'applicazione"
+
+#: _build/data/builder.glade:123
+msgid "_Close"
+msgstr "_Chiudi"
+
+#: _build/data/builder.glade:137
+msgid "Show Gtk about dialog"
+msgstr "Mostra la finestra di dialogo Gtk su"
+
+#: _build/data/blueprint.desktop.in:4
+msgid "blueprint"
+msgstr "progetto"
+
+#~ msgid "Compile using Gtk @0@ and build with Meson @1@"
+#~ msgstr "Compila usando Gtk @0@ e costruisci con Meson @1@"

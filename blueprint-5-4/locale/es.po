@@ -1,0 +1,81 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: blueprint 5.4.0.1\n"
+"Report-Msgid-Bugs-To: \"aullidolunar@gmail.com\"\n"
+"POT-Creation-Date: 2024-10-04 06:23-0700\n"
+"PO-Revision-Date: \n"
+"Last-Translator: aullidolunar <aullidolunar@gmail.com>\n"
+"Language-Team: aullidolunar\n"
+"Language: es_MX\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.5\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: src/callbacks.c:25
+msgid "This your text, my friend"
+msgstr "Este es el texto que escribiste, mi amigo"
+
+#: _build/src/MesonHelper.h:4 _build/data/blueprint.desktop.in:5
+msgid "Gtk4 application demo"
+msgstr "Demostración de una aplicación Gtk4"
+
+#: _build/data/builder.glade:21
+msgid "Your platform icon"
+msgstr "Ícono de tu plataforma"
+
+#: _build/data/builder.glade:32
+msgid "Choose your language:"
+msgstr "Elige tu idioma:"
+
+#: _build/data/builder.glade:44
+msgid "Available languages"
+msgstr "Idiomas disponibles"
+
+#: _build/data/builder.glade:45
+msgid "Spanish"
+msgstr "Español"
+
+#: _build/data/builder.glade:46
+msgid "Italian"
+msgstr "Italiano"
+
+#: _build/data/builder.glade:47
+msgid "Portuguese"
+msgstr "Portugués"
+
+#: _build/data/builder.glade:48
+msgid "English"
+msgstr "Inglés"
+
+#: _build/data/builder.glade:72
+msgid "Write something nice"
+msgstr "Escribe algo lindo"
+
+#: _build/data/builder.glade:83
+msgid "Show your text in a message dialog"
+msgstr "Muestra tu texto en un cuadro de diálogo"
+
+#: _build/data/builder.glade:96
+msgid "_Show"
+msgstr "_Mostrar"
+
+#: _build/data/builder.glade:110
+msgid "Exit the application"
+msgstr "Salir de la aplicación"
+
+#: _build/data/builder.glade:123
+msgid "_Close"
+msgstr "_Cerrar"
+
+#: _build/data/builder.glade:137
+msgid "Show Gtk about dialog"
+msgstr "Mostrar el GtkDialogAbout"
+
+#: _build/data/blueprint.desktop.in:4
+msgid "blueprint"
+msgstr "plantillaAzul"
+
+#~ msgid "Compile using Gtk @0@ and build with Meson @1@"
+#~ msgstr "Compilado en Gtk @0@ y con Meson @1@"
