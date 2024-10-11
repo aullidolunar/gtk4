@@ -1,0 +1,58 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the gtktest package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: gtktest \"3.0.0.0\"\n"
+"Report-Msgid-Bugs-To: \"aullidolunar@gmail.com\"\n"
+"POT-Creation-Date: 2024-10-09 21:39-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/callbacks.c:24
+msgid "This your text, my friend"
+msgstr ""
+
+#: src/callbacks.c:66
+msgid "Your platform icon"
+msgstr ""
+
+#: src/callbacks.c:68
+msgid "Type something nice:"
+msgstr ""
+
+#: src/callbacks.c:72
+msgid "Information to show on dialog"
+msgstr ""
+
+#: src/callbacks.c:75
+msgid "_OK"
+msgstr ""
+
+#: src/callbacks.c:76
+msgid "_Close"
+msgstr ""
+
+#: src/callbacks.c:77
+msgid "Exit the application"
+msgstr ""
+
+#: src/callbacks.c:79
+msgid "Show GtkAboutDialog"
+msgstr ""
+
+#: _build/data/gtktest.desktop.in:4
+msgid "gtktest"
+msgstr ""
+
+#: _build/data/gtktest.desktop.in:5
+msgid "Gtk4 application demo"
+msgstr ""
