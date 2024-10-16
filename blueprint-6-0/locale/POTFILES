@@ -1,0 +1,5 @@
+src/main.c
+src/callbacks.c
+build/src/MesonHelper.h
+build/data/builder.glade
+build/data/blueprint.desktop.in
