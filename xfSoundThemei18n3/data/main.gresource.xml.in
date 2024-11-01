@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+	<gresource prefix="@PROGRAM_RC_PATH@">
+		<file alias="/icons/96x96/apps/@PROGRAM_NAME@.png">linux-icon-96.png</file>
+		<file alias="/icons/64x64/apps/@PROGRAM_NAME@.png">windows-icon-64.png</file>
+		<file alias="/icons/48x48/apps/@PROGRAM_NAME@.png">linux-icon-48.png</file>
+		<file alias="/icons/32x32/apps/@PROGRAM_NAME@.png">windows-icon-32.png</file>
+		<file alias="/icons/16x16/apps/@PROGRAM_NAME@.png">linux-icon-16.png</file>
+    <file compressed="true" preprocess="xml-stripblanks">@GLADE_FILE@</file>
+    <file alias="myclose.png">close_22.png</file>
+    <file alias="myok.png">ok_22.png</file>
+    <file alias="card.png">home-icon-64.png</file>
+	</gresource>
+</gresources>

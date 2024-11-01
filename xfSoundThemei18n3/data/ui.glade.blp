@@ -1,0 +1,88 @@
+using Gtk 4.0;
+
+ApplicationWindow window1 {
+  Grid {
+    column-spacing: 10;
+    row-spacing: 10;
+    margin-start: 10;
+    margin-top: 10;
+    margin-end: 10;
+    margin-bottom: 10;
+    Image {
+      icon-name: "card";
+      pixel-size: 64;
+      layout {
+        column: 0;
+        row: 0;
+        row-span: 3;
+      }
+    }
+    Label {
+      label: _("Choose a theme:");
+      layout {
+        column: 1;
+        row: 0;
+      }
+    }
+    DropDown dropdown1 {
+      sensitive: false;
+      model: StringList slist {
+        strings [
+           _("Choose one")
+        ]
+      };
+      layout {
+        column: 2;
+        row: 0;
+      }
+    }
+    Separator {
+      orientation: horizontal;
+      layout {
+        column: 0;
+        row: 4;
+        column-span: 3;
+      }
+    }
+    Box {
+      orientation: horizontal;
+      spacing: 10;
+      layout {
+        column: 0;
+        row: 5;
+        column-span: 3;
+      }      
+      Box {
+        orientation: horizontal;
+        hexpand: true;
+      }
+      Button button_ok {
+        sensitive: bind dropdown1.sensitive;
+        clicked => $on_button_ok_clicked(dropdown1);
+        child: Box {
+          spacing: 5;
+          Image {
+            icon-name: "myok";
+          }
+          Label {
+            label: _("_OK");
+            use-underline: true;
+          }
+        };
+      }
+      Button {
+        clicked => $gtk_window_destroy(window1);
+        child: Box {
+          spacing: 5;
+          Image {
+            icon-name: "myclose";
+          }
+          Label {
+            label: _("_Close");
+            use-underline: true;
+          }
+        };
+      }
+    }
+  }
+}

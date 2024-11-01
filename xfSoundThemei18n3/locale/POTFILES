@@ -1,0 +1,4 @@
+src/main.c
+src/callbacks.c
+build/data/xfSoundThemei18n.desktop.in
+build/data/ui.glade
